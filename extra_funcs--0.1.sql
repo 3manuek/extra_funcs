@@ -1,0 +1,8 @@
+
+\echo Use "CREATE EXTENSION extra_funcs" to load this file. \quit
+
+
+CREATE OR REPLACE FUNCTION iif_c(BOOLEAN, DOUBLE PRECISION, DOUBLE PRECISION) RETURNS DOUBLE PRECISION
+     AS 'iif_c'
+     LANGUAGE internal IMMUTABLE STRICT;
+

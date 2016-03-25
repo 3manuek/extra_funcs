@@ -1,0 +1,5 @@
+# citext extension
+comment = 'small and extra functions for Postgres'
+default_version = '0.1'
+module_pathname = '$libdir/extra_funcs'
+relocatable = true
