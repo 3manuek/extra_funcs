@@ -8,7 +8,7 @@ PG_MODULE_MAGIC;
  
 PG_FUNCTION_INFO_V1(iif_c);
  
-static Datum
+Datum
 iif_c (PG_FUNCTION_ARGS){
    bool message = PG_GETARG_BOOL(0);
    float8 first = PG_GETARG_FLOAT8(1);
