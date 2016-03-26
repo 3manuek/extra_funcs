@@ -34,7 +34,6 @@ whoislogged:
   Return the number of users logged and the details in INFO format.
 */
 
-//int
 Datum
 whoislogged (PG_FUNCTION_ARGS){
     //char *command;
@@ -67,16 +66,17 @@ whoislogged (PG_FUNCTION_ARGS){
         {
             HeapTuple tuple = tuptable->vals[j];
 
-            for (i = 1, buf[0] = 0; i <= tupdesc->natts; i++)
+            /*for (i = 1, buf[0] = 0; i <= tupdesc->natts; i++)
                 snprintf(buf + strlen (buf), sizeof(buf) - strlen(buf), " %s%s",
                         SPI_getvalue(tuple, tupdesc, i),
                         (i == tupdesc->natts) ? " " : " |");
-            elog(INFO, "USER LOGGED: %s", buf);
+            */
+            elog(INFO, "USER LOGGED: %s", SPI_getvalue(tuple, tupdesc,1));
         }
     }
 
     SPI_finish();
     //pfree(command);
-
-    return (proc);
+    PG_RETURN_INT32(proc);
+    //return (proc);
 }
