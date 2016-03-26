@@ -29,6 +29,11 @@ iif (PG_FUNCTION_ARGS){
 PG_FUNCTION_INFO_V1(whoislogged);
 
 
+/*
+whoislogged: 
+  Return the number of users logged and the details in INFO format.
+*/
+
 //int
 Datum
 whoislogged (PG_FUNCTION_ARGS){
